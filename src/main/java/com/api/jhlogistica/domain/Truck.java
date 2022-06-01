@@ -28,7 +28,6 @@ public class Truck implements Serializable{
 	private String model;
 	private String plate;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="driver_id")
 	private Driver driver;

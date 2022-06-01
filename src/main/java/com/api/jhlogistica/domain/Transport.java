@@ -25,6 +25,7 @@ public class Transport implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	private String title;
 	private LocalDate date;
 	private Integer cte;
 	private String start;
@@ -40,9 +41,10 @@ public class Transport implements Serializable {
 		
 	}
 
-	public Transport(Long id, LocalDate date, Integer cte, String start, String destination, BigDecimal amount,
+	public Transport(Long id, String title, LocalDate date, Integer cte, String start, String destination, BigDecimal amount,
 			Truck truck, Status status) {
 		this.id = id;
+		this.title = title;
 		this.date = date;
 		this.cte = cte;
 		this.start = start;
@@ -58,6 +60,14 @@ public class Transport implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public LocalDate getDate() {

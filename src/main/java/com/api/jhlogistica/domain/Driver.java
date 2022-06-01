@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tb_driver")
 public class Driver implements Serializable{
@@ -22,6 +24,7 @@ public class Driver implements Serializable{
 	private Integer id;
 	private String nome;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
 	private List<Truck> trucks = new ArrayList<>();
 	
