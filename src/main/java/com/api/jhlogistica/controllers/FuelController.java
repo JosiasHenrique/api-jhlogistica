@@ -24,7 +24,7 @@ public class FuelController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Fuel>> listByPeriod(@RequestParam(name="initDate") String initDate,
 	@RequestParam(name="finalDate") String finalDate) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		List<Fuel> list = repo.listByPeriod(LocalDate.parse(initDate, formatter), LocalDate.parse(finalDate, formatter));
 		return ResponseEntity.ok(list);
 	}

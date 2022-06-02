@@ -25,7 +25,7 @@ public class TransportController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<Transport>> listByPeriod(@RequestParam(name="initDate") String initDate,
 	@RequestParam(name="finalDate") String finalDate) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		List<Transport> list = repo.listByPeriod(LocalDate.parse(initDate, formatter), LocalDate.parse(finalDate, formatter));
 		return ResponseEntity.ok(list);
 	}
