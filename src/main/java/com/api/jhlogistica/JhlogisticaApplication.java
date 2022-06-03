@@ -41,7 +41,7 @@ public class JhlogisticaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Driver driver = new Driver(null, "Josias Henrique");
+		Driver driver = new Driver(null, "Levi Henrique");
 		Truck truck = new Truck(null, "Iveco", "fbcin9c", driver);
 		driver.getTrucks().add(truck);
 		

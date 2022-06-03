@@ -14,6 +14,4 @@ public interface TransportRepository extends JpaRepository<Transport, Long> {
 
 	@Query("SELECT obj from Transport obj WHERE date(obj.date) BETWEEN :initPeriod AND :finalPeriod ORDER BY obj.date DESC")
 	List<Transport> listByPeriod(@Param("initPeriod") LocalDate initDate, @Param("finalPeriod") LocalDate finalDate); 
-	
-
 }

@@ -15,7 +15,6 @@ import javax.persistence.Table;
 import com.api.jhlogistica.domain.enums.Status;
 
 
-
 @Entity
 @Table(name = "tb_transport")
 public class Transport implements Serializable {
