@@ -13,6 +13,6 @@ import com.api.jhlogistica.domain.Fuel;
 public interface FuelRepository extends JpaRepository<Fuel, Long> {
 
 
-	@Query("SELECT obj from Fuel obj WHERE date(obj.date) BETWEEN :initPeriod AND :finalPeriod")
+	@Query("SELECT obj from Fuel obj WHERE date(obj.date) BETWEEN :initPeriod AND :finalPeriod ORDER BY obj.date DESC")
 	List<Fuel> listByPeriod(@Param("initPeriod") LocalDate initDate, @Param("finalPeriod") LocalDate finalDate);
 }

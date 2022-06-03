@@ -47,10 +47,10 @@ public class JhlogisticaApplication implements CommandLineRunner {
 		
 		
 		Fuel fuel = new Fuel(null, LocalDate.of(2021, 03, 20), 300.0,  new BigDecimal(1200.1), "Vargem Grande do Sul - SP", 458245, truck);
-		Fuel fuel1 = new Fuel(null, LocalDate.of(2022, 06, 05), 230.0,  new BigDecimal(1000.1), "Posto Alpha - SP", 458905, truck);
-		Fuel fuel2 = new Fuel(null, LocalDate.of(2022, 02, 14), 190.0,  new BigDecimal(832.19), "Posto 3 Poderes", 459245, truck);
+		Fuel fuel1 = new Fuel(null, LocalDate.of(2022, 06, 05), 230.0,  new BigDecimal(1000.1), "Posto Alpha - SP", 461105, truck);
+		Fuel fuel2 = new Fuel(null, LocalDate.of(2022, 02, 14), 190.0,  new BigDecimal(832.19), "Posto 3 Poderes", 460821, truck);
 		Fuel fuel3 = new Fuel(null, LocalDate.of(2021, 12, 12), 260.0,  new BigDecimal(987.1), "Posto Santo André", 459545, truck);
-		Fuel fuel4 = new Fuel(null, LocalDate.of(2020, 04, 20), 320.0,  new BigDecimal(1320.1), "Vargem Grande do Sul - SP", 459832, truck);
+		Fuel fuel4 = new Fuel(null, LocalDate.of(2020, 04, 20), 320.0,  new BigDecimal(1320.1), "Vargem Grande do Sul - SP", 457832, truck);
 		
 		Transport transport = new Transport(null, "Transporte para empresa em Guarapuava - SP", LocalDate.now(), 12458, "Vargem Grande do Sul - SP", "Guarapuava - PR", new BigDecimal(15000.98), truck, Status.CONCLUDED);
 		

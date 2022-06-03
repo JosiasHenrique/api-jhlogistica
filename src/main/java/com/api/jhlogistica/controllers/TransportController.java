@@ -1,7 +1,5 @@
 package com.api.jhlogistica.controllers;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,21 +10,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.jhlogistica.domain.Transport;
-import com.api.jhlogistica.repositories.TransportRepository;
-
+import com.api.jhlogistica.services.TransportService;
 
 @RestController
 @RequestMapping(value = "/transports")
 public class TransportController {
 
 	@Autowired
-	private TransportRepository repo;
-	
+	private TransportService service;
+
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<List<Transport>> listByPeriod(@RequestParam(name="initDate") String initDate,
-	@RequestParam(name="finalDate") String finalDate) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		List<Transport> list = repo.listByPeriod(LocalDate.parse(initDate, formatter), LocalDate.parse(finalDate, formatter));
-		return ResponseEntity.ok(list);
+	public ResponseEntity<List<Transport>> listByPeriod(@RequestParam(name = "initDate") String initDate,
+			@RequestParam(name = "finalDate") String finalDate) {
+		List<Transport> list = service.listByPeriod(initDate, finalDate);
+		if (list.isEmpty()) {
+			return ResponseEntity.notFound().build();
+		} else {
+			return ResponseEntity.ok(list);
+		}
 	}
 }
